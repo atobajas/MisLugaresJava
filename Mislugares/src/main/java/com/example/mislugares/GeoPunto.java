@@ -3,12 +3,36 @@ package com.example.mislugares;
 public class GeoPunto {
 
     private double longitud, latitud;
+    private int grado1, grado2;
 
     static public GeoPunto SIN_POSICION = new GeoPunto(0.0,0.0);
 
     public GeoPunto(double longitud, double latitud) {
         this.longitud= longitud;
         this.latitud= latitud;
+    }
+
+    public GeoPunto(double longitud, double latitud, int grado1, int grado2) {
+        this(longitud, latitud);
+
+        this.grado1 = grado1;
+        this.grado2 = grado2;
+    }
+
+    public int getGrado1() {
+        return grado1;
+    }
+
+    public void setGrado1(int grado1) {
+        this.grado1 = grado1;
+    }
+
+    public int getGrado2() {
+        return grado2;
+    }
+
+    public void setGrado2(int grado2) {
+        this.grado2 = grado2;
     }
 
     public double getLongitud() {

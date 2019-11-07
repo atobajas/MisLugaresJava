@@ -2,25 +2,41 @@ package com.example.mislugares;
 public class Lugar {
     private String nombre;
     private String direccion;
-    private GeoPunto posicion;
+    private GeoPuntoAlt posicion;
     private String foto;
     private int telefono;
     private String url;
     private String comentario;
     private long fecha;
     private float valoracion;
+    private TipoLugar tipo;
 
     public Lugar(String nombre, String direccion, double longitud,
-                 double latitud, int telefono, String url, String comentario,
-                 int valoracion) {
+                 double latitud, double altura, TipoLugar tipo, int telefono, String url,
+                 String comentario, int valoracion) {
         fecha = System.currentTimeMillis();
-        posicion = new GeoPunto(longitud, latitud);
+        posicion = new GeoPuntoAlt(longitud, latitud, altura);
         this.nombre = nombre;
         this.direccion = direccion;
+        this.tipo =  tipo;
         this.telefono = telefono;
         this.url = url;
         this.comentario = comentario;
         this.valoracion = valoracion;
+    }
+
+    public Lugar() {
+        fecha = System.currentTimeMillis();
+        posicion =  GeoPuntoAlt.SIN_POSICION;
+        tipo = TipoLugar.OTROS;
+    }
+
+    public TipoLugar getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoLugar tipo) {
+        this.tipo = tipo;
     }
 
     public String getNombre() {
@@ -39,11 +55,11 @@ public class Lugar {
         this.direccion = direccion;
     }
 
-    public GeoPunto getPosicion() {
+    public GeoPuntoAlt getPosicion() {
         return posicion;
     }
 
-    public void setPosicion(GeoPunto posicion) {
+    public void setPosicion(GeoPuntoAlt posicion) {
         this.posicion = posicion;
     }
 
@@ -107,6 +123,7 @@ public class Lugar {
                 ", comentario='" + comentario + '\'' +
                 ", fecha=" + fecha +
                 ", valoracion=" + valoracion +
+                ", tipo=" + tipo +
                 '}';
     }
 }
