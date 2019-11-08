@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Mis Lugares Java</string>
+    <string name="chkGuardar">Guardar</string>
 </resources>

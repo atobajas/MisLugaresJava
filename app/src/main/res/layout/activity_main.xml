@@ -6,11 +6,15 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edpp"/>
     <ToggleButton
         android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:text="ToggleButton" />
 
     <CheckBox
@@ -18,15 +22,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="20dp"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
         android:gravity="center"
-        android:text="CheckBox" />
+        android:text="@string/chkGuardar"
+        android:textSize="9pt" />
 
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="4" />
 
     <RatingBar
         android:id="@+id/ratingBar"
